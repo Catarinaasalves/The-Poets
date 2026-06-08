@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://diemdw6d7c0gd"]
+
+[ext_resource type="Script" uid="uid://la6s0oqpqbq0" path="res://node_2d.gd" id="1_0e48y"]
+[ext_resource type="VideoStream" uid="uid://dbjvutgeqte32" path="res://main.ogv" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dlmiwdw804kmq" path="res://control.gd" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dkrqe38h5f0it" path="res://assets jogo/UI/options.png" id="3_epypp"]
+
+[sub_resource type="Animation" id="Animation_0e48y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_epypp"]
+resource_name = "botões_inicio"
+length = 11.633333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(9.96, 10.04),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hol4"]
+_data = {
+&"RESET": SubResource("Animation_0e48y"),
+&"botões_inicio": SubResource("Animation_epypp")
+}
+
+[sub_resource type="FontFile" id="FontFile_0e48y"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_epypp"]
+load_path = "res://.godot/imported/start.png-8d19aad23b73ecb2cf2be7bf6837e736.ctex"
+
+[node name="Node2D" type="Node2D" unique_id=1877774703]
+script = ExtResource("1_0e48y")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1805218020]
+offset_left = -3.0
+offset_top = -7.0
+offset_right = 1277.0
+offset_bottom = 713.0
+stream = ExtResource("1_wtcfe")
+autoplay = true
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=292303044]
+libraries/ = SubResource("AnimationLibrary_0hol4")
+
+[node name="Control" type="Control" parent="." unique_id=544611225]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_0hol4")
+
+[node name="start" type="Button" parent="Control" unique_id=799259111]
+layout_mode = 1
+offset_left = 907.0
+offset_top = 217.0
+offset_right = 1159.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0.02745098, 0.05882353, 0.23137255, 1)
+theme_override_colors/font_pressed_color = Color(0.02745098, 0.05882353, 0.23137255, 1)
+theme_override_colors/font_hover_color = Color(6.092, 6.092, 6.092, 1)
+theme_override_colors/icon_pressed_color = Color(0.019607844, 0.35686275, 0.4745098, 1)
+theme_override_fonts/font = SubResource("FontFile_0e48y")
+theme_override_font_sizes/font_size = 28
+text = "Start"
+icon = SubResource("CompressedTexture2D_epypp")
+flat = true
+text_overrun_behavior = 5
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[node name="Options" type="Button" parent="Control" unique_id=1642768600]
+layout_mode = 0
+offset_left = 907.0
+offset_top = 311.0
+offset_right = 1159.0
+offset_bottom = 436.0
+theme_override_colors/font_color = Color(0.02745098, 0.05882353, 0.23137255, 1)
+theme_override_colors/font_pressed_color = Color(0.02745098, 0.05882353, 0.23137255, 1)
+theme_override_colors/icon_pressed_color = Color(0.019607844, 0.35686275, 0.4745098, 1)
+theme_override_fonts/font = SubResource("FontFile_0e48y")
+theme_override_font_sizes/font_size = 28
+text = "Options"
+icon = ExtResource("3_epypp")
+flat = true
+text_overrun_behavior = 5
+autowrap_trim_flags = 0
+icon_alignment = 1
