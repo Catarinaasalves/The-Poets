@@ -1,6 +1,6 @@
 extends Node2D
 
-const GAME_SCENE = "res://jogo/Game.tscn"
+const GAME_SCENE = "res://Game.tscn"
 var _load_progress = []
 
 @onready var video = $Control/VideoStreamPlayer

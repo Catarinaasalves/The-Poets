@@ -1,16 +1,16 @@
 extends Control
 
-const GAME_SCENE = "res://jogo/Game.tscn"
-var _load_progress = []
+const GAME_SCENE = "res://Game.tscn"
 
-@onready var video = $Control/VideoStreamPlayer
+@onready var video = $"../VideoStreamPlayer"
 
 func _ready():
 	video.play()
-	ResourceLoader.load_threaded_request(GAME_SCENE)
+
+   # Esconde os botões enquanto o vídeo está a correr
+	visible = false
 
 func _process(_delta):
-	var status = ResourceLoader.load_threaded_get_status(GAME_SCENE, _load_progress)
-	if status == ResourceLoader.THREAD_LOAD_LOADED:
-		var scene = ResourceLoader.load_threaded_get(GAME_SCENE)
-		get_tree().change_scene_to_packed(scene)
+	
+	if !video.is_playing() and !visible:
+		visible = true

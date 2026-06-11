@@ -193,7 +193,7 @@ text_overrun_behavior = 5
 autowrap_trim_flags = 0
 icon_alignment = 1
 
-[node name="Options" type="Button" parent="Control" unique_id=1642768600]
+[node name="options" type="Button" parent="Control" unique_id=1642768600]
 layout_mode = 0
 offset_left = 907.0
 offset_top = 311.0
