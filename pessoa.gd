@@ -25,7 +25,7 @@ func _process(delta):
 		direction = direction.normalized()
 		position += direction * speed * delta
 
-		position.x = clamp(position.x, -220, 450)
+		position.x = clamp(position.x, -300, 450)
 		position.y = clamp(position.y, -15, 100)
 
 		if abs(direction.x) > abs(direction.y):
@@ -44,9 +44,14 @@ func _process(delta):
 					animation.play("Trás")
 
 	else:
-		animation.pause()
+		animation.stop()
+		animation.seek(0.0, true)
 
 
 func _on_interaction_area_area_entered(area):
 	print("Entrou em alguma coisa")
 	print(area.name)
+
+
+func _on_music_player_finished():
+	get_tree().change_scene_to_file("res://Caeiro.tscn")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://gx5rnwo5aama"]
+
+[ext_resource type="AudioStream" uid="uid://be6sfwjwyhjl6" path="res://assets jogo/Audio/RICARDO REIS AUDIO FILE (1).wav" id="1_ftwci"]
+
+[node name="Node2D" type="Node2D" unique_id=269187457]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=323153004]
+stream = ExtResource("1_ftwci")
+autoplay = true

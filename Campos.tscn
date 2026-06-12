@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dxhrapmyepaig"]
+
+[ext_resource type="AudioStream" uid="uid://ds7230bemgubr" path="res://assets jogo/Audio/ALVARO DE CAMPOS AUDIO FILE (1).wav" id="1_pi6la"]
+
+[node name="Node2D" type="Node2D" unique_id=812368149]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=912185655]
+stream = ExtResource("1_pi6la")
+autoplay = true

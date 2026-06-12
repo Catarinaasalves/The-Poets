@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cyxhe2ff2mdun"]
+
+[ext_resource type="AudioStream" uid="uid://c0x2bhck0b0gq" path="res://assets jogo/Audio/ALBERTO CAEIRO AUDIO FILE.wav" id="1_nv2e2"]
+
+[node name="Node2D" type="Node2D" unique_id=1982505425]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=73908181]
+stream = ExtResource("1_nv2e2")
+autoplay = true
