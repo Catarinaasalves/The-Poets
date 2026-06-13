@@ -18,7 +18,7 @@
 
 [sub_resource type="Animation" id="Animation_xkndl"]
 resource_name = "Direita"
-length = 0.8
+length = 0.001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -111,6 +111,8 @@ size = Vector2(38.46151, 80.00001)
 size = Vector2(65.3846, 84.99996)
 
 [node name="Node2D" type="Node2D" unique_id=1181986535]
+position = Vector2(970, 600)
+scale = Vector2(1.507345, 1.507345)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1522315577]
 scale = Vector2(0.155, 0.155)
@@ -129,7 +131,7 @@ script = ExtResource("2_q6bwd")
 texture = ExtResource("3_tvghc")
 hframes = 8
 vframes = 4
-frame = 23
+frame = 16
 
 [node name="PessoaAnima" type="AnimationPlayer" parent="World/PessoaManager/Pessoa/PessoaPersonagem" unique_id=616927745]
 libraries/ = SubResource("AnimationLibrary_r0x5m")
@@ -186,11 +188,11 @@ shape = SubResource("RectangleShape2D_yhmtn")
 script = ExtResource("10_keq6p")
 
 [node name="Hotbar" type="TextureRect" parent="UI" unique_id=1004736]
-offset_left = 82.0
-offset_top = 571.0
-offset_right = 1362.0
-offset_bottom = 683.0
-scale = Vector2(0.865, 0.865)
+offset_left = 99.0
+offset_top = 999.0
+offset_right = 1379.0
+offset_bottom = 1111.0
+scale = Vector2(1.325, 1.325)
 texture = ExtResource("11_288ku")
 
 [node name="PulseiraHotbar" type="TextureRect" parent="UI/Hotbar" unique_id=115150365]
@@ -210,13 +212,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -597.0
-offset_top = -603.0
-offset_right = 744.0
-offset_bottom = 90.0
+offset_left = -914.0
+offset_top = -887.0
+offset_right = 427.0
+offset_bottom = -194.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.9, 0.9)
+scale = Vector2(1.37, 1.37)
 texture = ExtResource("13_we8oh")
 stretch_mode = 3
 
@@ -235,14 +237,20 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -110.0
+offset_right = 47.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.3372549)
 
 [node name="PulseiraPopup" type="TextureRect" parent="UI" unique_id=1049834734]
 visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 314.00003
+offset_top = 160.0
+offset_right = 2234.0
+offset_bottom = 1240.0
 scale = Vector2(0.635, 0.635)
 texture = ExtResource("12_vu7o4")
 stretch_mode = 5
@@ -251,10 +259,10 @@ stretch_mode = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 736.0
-offset_top = 338.0
-offset_right = -68.51123
-offset_bottom = -28.917297
+offset_left = 615.0
+offset_top = 234.0
+offset_right = -189.51123
+offset_bottom = -132.91724
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.665, 0.665)
