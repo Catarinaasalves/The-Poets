@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b7er16c6uogc5" path="res://maquina.gd" id="5_0lqjk"]
 [ext_resource type="Texture2D" uid="uid://bja0d4v5qpmi4" path="res://assets jogo/UI/inventário 1.png" id="5_ak7fd"]
 [ext_resource type="Texture2D" uid="uid://b3c0eypir15r4" path="res://assets jogo/UI/Interface 2.png" id="7_bq31s"]
+[ext_resource type="Script" uid="uid://cpqjtbkbkjbe5" path="res://fade.gd" id="9_0lqjk"]
 
 [sub_resource type="Animation" id="Animation_t88pq"]
 resource_name = "Trás"
@@ -128,7 +129,7 @@ script = ExtResource("3_jy836")
 texture = ExtResource("3_0lqjk")
 hframes = 8
 vframes = 4
-frame = 16
+frame = 8
 
 [node name="PessoaAnima" type="AnimationPlayer" parent="World/CamposManager/Campos/CamposPersonagem" unique_id=912796472]
 libraries/ = SubResource("AnimationLibrary_amkms")
@@ -227,6 +228,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Fade" type="ColorRect" parent="UI" unique_id=720736402]
+offset_right = 1992.0
+offset_bottom = 1206.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_0lqjk")
+
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=912185655]
 stream = ExtResource("1_pi6la")
 autoplay = true
@@ -250,3 +258,4 @@ autoplay = true
 [connection signal="area_entered" from="World/CamposManager/Máquina6" to="World/CamposManager/Máquina6" method="_on_area_entered"]
 [connection signal="area_exited" from="World/CamposManager/Máquina6" to="World/CamposManager/Máquina6" method="_on_area_exited"]
 [connection signal="input_event" from="World/CamposManager/Máquina6" to="World/CamposManager/Máquina6" method="_on_input_event"]
+[connection signal="finished" from="MusicPlayer" to="World/CamposManager" method="_on_music_player_finished"]

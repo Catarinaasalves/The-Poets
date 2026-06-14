@@ -15,10 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://bu4jrr64wq74b" path="res://assets jogo/Sprites Itens/pulseira pessoa negreiros 1.png" id="12_vu7o4"]
 [ext_resource type="Texture2D" uid="uid://b3c0eypir15r4" path="res://assets jogo/UI/Interface 2.png" id="13_we8oh"]
 [ext_resource type="AudioStream" uid="uid://dui5b8ttl0m2b" path="res://assets jogo/Audio/FERNANDO PESSOA AUDIO FILE.wav" id="14_f61nl"]
+[ext_resource type="Script" uid="uid://cpqjtbkbkjbe5" path="res://fade.gd" id="15_tvghc"]
 
 [sub_resource type="Animation" id="Animation_xkndl"]
 resource_name = "Direita"
-length = 0.001
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -267,6 +268,13 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.665, 0.665)
 stretch_mode = 3
+
+[node name="Fade" type="ColorRect" parent="UI" unique_id=1419237814]
+offset_right = 1992.0
+offset_bottom = 1206.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("15_tvghc")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=26125006]
 stream = ExtResource("14_f61nl")

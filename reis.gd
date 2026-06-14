@@ -2,7 +2,7 @@ extends Node2D
 
 @export var speed = 200.0
 
-@onready var animation = $CamposPersonagem/PessoaAnima
+@onready var animation = $ReisPersonagem/PessoaAnima
 
 func _process(delta):
 
@@ -28,7 +28,7 @@ func _process(delta):
 		direction = direction.normalized()
 		position += direction * speed * delta
 
-		position.x = clamp(position.x, -300, 450)
+		position.x = clamp(position.x, -220, 450)
 		position.y = clamp(position.y, -15, 100)
 
 		if abs(direction.x) > abs(direction.y):

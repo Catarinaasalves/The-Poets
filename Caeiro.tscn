@@ -2,11 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bt4nnyryair72" path="res://assets jogo/Quartos/CaeiroQuarto.png" id="1_6on6s"]
 [ext_resource type="AudioStream" uid="uid://c0x2bhck0b0gq" path="res://assets jogo/Audio/ALBERTO CAEIRO AUDIO FILE.wav" id="1_nv2e2"]
-[ext_resource type="Script" uid="uid://bc822xqqpsyav" path="res://pessoa.gd" id="2_n8fc4"]
+[ext_resource type="Script" uid="uid://ds513xkbl2tya" path="res://caeiroManager.gd" id="2_6on6s"]
+[ext_resource type="Script" uid="uid://c3wv4rauolsod" path="res://caeiro.gd" id="3_6on6s"]
 [ext_resource type="Texture2D" uid="uid://dnlhyelg1dl44" path="res://assets jogo/Sprites Personagens/Alberto Caeiro.png" id="3_t34gs"]
 [ext_resource type="Script" uid="uid://caonn5tcfgjt5" path="res://ui.gd" id="4_s86nr"]
 [ext_resource type="Texture2D" uid="uid://bja0d4v5qpmi4" path="res://assets jogo/UI/inventário 1.png" id="5_4yd3v"]
 [ext_resource type="Texture2D" uid="uid://b3c0eypir15r4" path="res://assets jogo/UI/Interface 2.png" id="7_vxhvf"]
+[ext_resource type="Script" uid="uid://cpqjtbkbkjbe5" path="res://fade.gd" id="8_n8fc4"]
 
 [sub_resource type="Animation" id="Animation_xkndl"]
 resource_name = "Direita"
@@ -87,6 +89,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_0fp20"]
 radius = 32.6357
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8fc4"]
+size = Vector2(133.15233, 289.1742)
+
 [node name="Node2D" type="Node2D" unique_id=1982505425]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=822909102]
@@ -98,27 +103,33 @@ texture = ExtResource("1_6on6s")
 position = Vector2(960.693, 576.8739)
 scale = Vector2(1.9676721, 1.9676721)
 
-[node name="Pessoa" type="Node2D" parent="World" unique_id=826157740]
-script = ExtResource("2_n8fc4")
+[node name="caeiroManager" type="Node2D" parent="World" unique_id=744652776]
+script = ExtResource("2_6on6s")
 
-[node name="PessoaPersonagem" type="Sprite2D" parent="World/Pessoa" unique_id=1778399019]
+[node name="Caeiro" type="Node2D" parent="World/caeiroManager" unique_id=826157740]
+script = ExtResource("3_6on6s")
+
+[node name="CaeiroPersonagem" type="Sprite2D" parent="World/caeiroManager/Caeiro" unique_id=1778399019]
 texture = ExtResource("3_t34gs")
 hframes = 8
 vframes = 4
 frame = 16
 
-[node name="PessoaAnima" type="AnimationPlayer" parent="World/Pessoa/PessoaPersonagem" unique_id=515926359]
+[node name="PessoaAnima" type="AnimationPlayer" parent="World/caeiroManager/Caeiro/CaeiroPersonagem" unique_id=515926359]
 libraries/ = SubResource("AnimationLibrary_mhxie")
 
-[node name="InteractionArea" type="Area2D" parent="World/Pessoa" unique_id=1981887893]
+[node name="InteractionArea" type="Area2D" parent="World/caeiroManager/Caeiro" unique_id=1981887893]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Pessoa/InteractionArea" unique_id=2034145730]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/caeiroManager/Caeiro/InteractionArea" unique_id=2034145730]
 position = Vector2(4.615384, 3.0769231)
 scale = Vector2(2.295, 5.225)
 shape = SubResource("CircleShape2D_0fp20")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1488627714]
-visible = false
+[node name="Pa" type="Area2D" parent="World/caeiroManager" unique_id=1750925260]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/caeiroManager/Pa" unique_id=1613430836]
+position = Vector2(61.649994, 33.352142)
+shape = SubResource("RectangleShape2D_n8fc4")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=978403216]
 script = ExtResource("4_s86nr")
@@ -157,8 +168,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.3372549)
 
+[node name="Fade" type="ColorRect" parent="UI" unique_id=557311508]
+visible = false
+offset_right = 1992.0
+offset_bottom = 1206.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("8_n8fc4")
+
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=73908181]
 stream = ExtResource("1_nv2e2")
 autoplay = true
 
-[connection signal="area_entered" from="World/Pessoa/InteractionArea" to="World/Pessoa" method="_on_interaction_area_area_entered"]
+[connection signal="area_entered" from="World/caeiroManager/Caeiro/InteractionArea" to="World/caeiroManager/Caeiro" method="_on_interaction_area_area_entered"]
+[connection signal="finished" from="MusicPlayer" to="World/caeiroManager" method="_on_music_player_finished"]

@@ -6,6 +6,9 @@ extends Node2D
 
 func _process(delta):
 
+	if animation == null:
+		return
+
 	var direction = Vector2.ZERO
 
 	if Input.is_key_pressed(KEY_A):
@@ -44,8 +47,9 @@ func _process(delta):
 					animation.play("Trás")
 
 	else:
-		animation.stop()
-		animation.seek(0.0, true)
+		if animation != null:
+			animation.stop()
+			animation.seek(0.0, true)
 
 
 func _on_interaction_area_area_entered(area):
@@ -54,4 +58,4 @@ func _on_interaction_area_area_entered(area):
 
 
 func _on_music_player_finished():
-	get_tree().change_scene_to_file("res://Caeiro.tscn")
+	pass
