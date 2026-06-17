@@ -7,8 +7,16 @@ var operation_open = false
 @onready var vinheta = $"../../UI/OperationGame/Vinheta"
 @onready var fade = $"../../UI/Fade"
 
+@onready var operation_game = $"../../UI/OperationGame"
+@onready var popup_background = $"../../UI/PopupBackground"
+
+@onready var cadaver_hotbar = $"../../UI/Hotbar/CadaverHotbar"
+@onready var cadaver_inventario = $"../../UI/Inventario/CadaverInventario"
+
 func _ready():
-	pass
+
+	cadaver_hotbar.visible = false
+	cadaver_inventario.visible = false
 
 
 func _process(delta):
@@ -39,11 +47,23 @@ func aumentar_ruido(valor):
 
 	if ruido >= 100:
 
+		cadaver_hotbar.visible = true
+		cadaver_inventario.visible = true
+
+		operation_game.visible = false
+		popup_background.visible = false
+
 		GameManager.concluir_heteronimo("Reis")
 
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(3.0).timeout
 
-		fade.mudar_cena("res://Pessoa.tscn")
+		if GameManager.todos_concluidos():
+
+			fade.mudar_cena("res://Fim.tscn")
+
+		else:
+
+			fade.mudar_cena("res://Pessoa.tscn")
 
 
 func _on_music_player_finished():

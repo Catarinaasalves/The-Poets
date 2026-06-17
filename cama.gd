@@ -26,3 +26,10 @@ func _on_area_entered(area):
 func _on_area_exited(area):
 
 	player_near = false
+
+
+func _on_mouse_entered():
+	CursorManager.mostrar_hover()
+
+func _on_mouse_exited():
+	CursorManager.mostrar_normal()

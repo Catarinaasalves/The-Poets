@@ -41,7 +41,13 @@ func maquina_ativada():
 
 		await get_tree().create_timer(0.2).timeout
 
-		fade.mudar_cena("res://Reis.tscn")
+		if GameManager.todos_concluidos():
+
+			fade.mudar_cena("res://Fim.tscn")
+
+		else:
+
+			fade.mudar_cena("res://Reis.tscn")
 
 
 func _on_music_player_finished():

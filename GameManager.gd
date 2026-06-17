@@ -52,6 +52,9 @@ func obter_cena(nome):
 		"Reis":
 			return "res://Reis.tscn"
 
+		"Fim":
+			return "res://Fim.tscn"
+
 	return ""
 
 

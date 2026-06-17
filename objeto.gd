@@ -20,3 +20,10 @@ func _process(_delta):
 
 	if dragging:
 		global_position = get_global_mouse_position() - offset
+
+
+func _on_mouse_entered():
+	CursorManager.mostrar_hover()
+
+func _on_mouse_exited():
+	CursorManager.mostrar_normal()

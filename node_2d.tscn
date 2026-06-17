@@ -155,10 +155,11 @@ load_path = "res://.godot/imported/start.png-8d19aad23b73ecb2cf2be7bf6837e736.ct
 script = ExtResource("1_0e48y")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1805218020]
-offset_left = -3.0
+offset_left = -100.99999
 offset_top = -7.0
-offset_right = 1277.0
+offset_right = 1179.0
 offset_bottom = 713.0
+scale = Vector2(1.6681409, 1.6681409)
 stream = ExtResource("1_wtcfe")
 autoplay = true
 expand = true
@@ -176,10 +177,11 @@ script = ExtResource("3_0hol4")
 
 [node name="start" type="Button" parent="Control" unique_id=799259111]
 layout_mode = 1
-offset_left = 907.0
-offset_top = 217.0
-offset_right = 1159.0
-offset_bottom = 342.0
+offset_left = 1437.0001
+offset_top = 743.0
+offset_right = 1689.0001
+offset_bottom = 868.0
+scale = Vector2(1.470537, 1.470537)
 theme_override_colors/font_color = Color(0.02745098, 0.05882353, 0.23137255, 1)
 theme_override_colors/font_pressed_color = Color(0.02745098, 0.05882353, 0.23137255, 1)
 theme_override_colors/font_hover_color = Color(6.092, 6.092, 6.092, 1)
@@ -194,6 +196,7 @@ autowrap_trim_flags = 0
 icon_alignment = 1
 
 [node name="options" type="Button" parent="Control" unique_id=1642768600]
+visible = false
 layout_mode = 0
 offset_left = 907.0
 offset_top = 311.0

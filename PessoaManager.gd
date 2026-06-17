@@ -27,7 +27,13 @@ func verificar_fim():
 
 		GameManager.concluir_heteronimo("Pessoa")
 
-		fade.mudar_cena("res://Caeiro.tscn")
+		if GameManager.todos_concluidos():
+
+			fade.mudar_cena("res://Fim.tscn")
+
+		else:
+
+			fade.mudar_cena("res://Caeiro.tscn")
 
 
 func _on_music_player_finished():

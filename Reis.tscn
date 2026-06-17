@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://caonn5tcfgjt5" path="res://ui.gd" id="5_hkwey"]
 [ext_resource type="Texture2D" uid="uid://bja0d4v5qpmi4" path="res://assets jogo/UI/inventário 1.png" id="6_gaeko"]
 [ext_resource type="Texture2D" uid="uid://b3c0eypir15r4" path="res://assets jogo/UI/Interface 2.png" id="8_lamgu"]
+[ext_resource type="Texture2D" uid="uid://c5vck87wevb0g" path="res://assets jogo/Sprites Itens/cadaver.png" id="8_oo4sj"]
 [ext_resource type="Texture2D" uid="uid://ctnd8flrpsmrw" path="res://assets jogo/Sprites Itens/Operation/FundoOperation.png" id="9_b1ojk"]
 [ext_resource type="Texture2D" uid="uid://b8i7bfwbdlvw0" path="res://assets jogo/Sprites Itens/Operation/Pinça.png" id="10_gaeko"]
 [ext_resource type="Script" uid="uid://d1qhdns6304g6" path="res://pinca.gd" id="11_38y11"]
@@ -163,6 +164,16 @@ offset_bottom = 1111.0
 scale = Vector2(1.325, 1.325)
 texture = ExtResource("6_gaeko")
 
+[node name="CadaverHotbar" type="TextureRect" parent="UI/Hotbar" unique_id=419624706]
+visible = false
+layout_mode = 0
+offset_left = -16.603773
+offset_top = -22.64151
+offset_right = 8241.396
+offset_bottom = 5977.3584
+scale = Vector2(0.025042858, 0.025042858)
+texture = ExtResource("8_oo4sj")
+
 [node name="Inventario" type="TextureRect" parent="UI" unique_id=1493413563]
 visible = false
 anchors_preset = 7
@@ -179,6 +190,16 @@ grow_vertical = 0
 scale = Vector2(1.37, 1.37)
 texture = ExtResource("8_lamgu")
 stretch_mode = 3
+
+[node name="CadaverInventario" type="TextureRect" parent="UI/Inventario" unique_id=1394612592]
+visible = false
+layout_mode = 0
+offset_left = -16.603773
+offset_top = -22.64151
+offset_right = 8241.396
+offset_bottom = 5977.3584
+scale = Vector2(0.025042858, 0.025042858)
+texture = ExtResource("8_oo4sj")
 
 [node name="PopupBackground" type="ColorRect" parent="UI" unique_id=1826216016]
 visible = false
@@ -321,7 +342,6 @@ mouse_filter = 2
 texture = ExtResource("20_c3prn")
 
 [node name="Fade" type="ColorRect" parent="UI" unique_id=663120779]
-visible = false
 offset_left = -46.0
 offset_top = -11.0
 offset_right = 1946.0
@@ -338,5 +358,15 @@ autoplay = true
 [connection signal="area_entered" from="World/ReisManager/Cama" to="World/ReisManager/Cama" method="_on_area_entered"]
 [connection signal="area_exited" from="World/ReisManager/Cama" to="World/ReisManager/Cama" method="_on_area_exited"]
 [connection signal="input_event" from="World/ReisManager/Cama" to="World/ReisManager/Cama" method="_on_input_event"]
+[connection signal="mouse_entered" from="World/ReisManager/Cama" to="World/ReisManager/Cama" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="World/ReisManager/Cama" to="World/ReisManager/Cama" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/OperationGame/Objeto1" to="UI/OperationGame/Objeto1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/OperationGame/Objeto1" to="UI/OperationGame/Objeto1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/OperationGame/Objeto2" to="UI/OperationGame/Objeto2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/OperationGame/Objeto2" to="UI/OperationGame/Objeto2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/OperationGame/Objeto3" to="UI/OperationGame/Objeto3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/OperationGame/Objeto3" to="UI/OperationGame/Objeto3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/OperationGame/Objeto4" to="UI/OperationGame/Objeto4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/OperationGame/Objeto4" to="UI/OperationGame/Objeto4" method="_on_mouse_exited"]
 [connection signal="area_entered" from="UI/OperationGame/Metal" to="UI/OperationGame/Metal" method="_on_area_entered"]
 [connection signal="finished" from="MusicPlayer" to="World/ReisManager" method="_on_music_player_finished"]
