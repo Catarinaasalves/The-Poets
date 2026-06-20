@@ -49,3 +49,9 @@ func _on_music_player_finished():
 	fade.mudar_cena(
 		GameManager.obter_cena(proximo)
 	)
+
+
+func _on_texture_button_pressed():
+	get_node("/root/Node2D/Hint/HintPopup").show_hint(
+		"Dispersei-me por muitas vozes e deixei vestígios de todas elas.\nAlguns encontram-se escritos;\noutros permanecem junto daqueles que caminharam ao meu lado."
+	)

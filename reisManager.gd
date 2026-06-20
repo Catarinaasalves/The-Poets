@@ -79,3 +79,9 @@ func _on_music_player_finished():
 	fade.mudar_cena(
 		GameManager.obter_cena(proximo)
 	)
+
+
+func _on_texture_button_pressed():
+	get_node("/root/Node2D/Hint/HintPopup").show_hint(
+		"Há limites que existem para ser respeitados por homens prudentes.\n\nEu nunca fui um deles."
+	)

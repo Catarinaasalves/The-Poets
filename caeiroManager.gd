@@ -106,7 +106,7 @@ func validar_lapide():
 
 	if lapide_atual == "nascimento":
 
-		if resposta == "1988":
+		if resposta == "1889":
 
 			lapide_nascimento_resolvida = true
 
@@ -117,7 +117,7 @@ func validar_lapide():
 
 	if lapide_atual == "morte":
 
-		if resposta == "2035":
+		if resposta == "1915":
 
 			lapide_morte_resolvida = true
 
@@ -169,3 +169,7 @@ func saltar_para_buraco():
 		else:
 
 			fade.mudar_cena("res://Campos.tscn")
+
+
+func _on_texture_button_pressed():
+	get_node("/root/Node2D/Hint/HintPopup").show_hint("Aquilo que a terra esconde pode voltar à superfície.\n\nQuanto às lápides, dizem tudo o que têm para dizer a quem as observa.")

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c541pshcbhl57"]
+
+[ext_resource type="Script" uid="uid://oc133nctc3oh" path="res://HintPopup.gd" id="1_boh2i"]
+[ext_resource type="Texture2D" uid="uid://ca7gfdkw4ow4f" path="res://assets jogo/UI/dicas.png" id="2_7xqkc"]
+
+[node name="Hint" type="CanvasLayer" unique_id=2057397818]
+
+[node name="HintPopup" type="Control" parent="." unique_id=776694061]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_boh2i")
+
+[node name="Background" type="ColorRect" parent="HintPopup" unique_id=1822988532]
+layout_mode = 0
+offset_right = 1935.0
+offset_bottom = 1213.0
+color = Color(0, 0, 0, 0.47843137)
+
+[node name="HintUI" type="TextureRect" parent="HintPopup" unique_id=1571225882]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 284.0
+offset_right = 2738.0
+offset_bottom = 1324.0
+scale = Vector2(0.61795354, 0.61795354)
+texture = ExtResource("2_7xqkc")
+
+[node name="Label" type="Label" parent="HintPopup/HintUI" unique_id=891331686]
+layout_mode = 0
+offset_left = 197.42584
+offset_top = 140.78732
+offset_right = 2395.002
+offset_bottom = 833.3961
+theme_override_colors/font_color = Color(0.244627, 0.1582931, 0.02978639, 1)
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="HintPopup/Background" to="HintPopup" method="_on_background_gui_input"]

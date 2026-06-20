@@ -23,6 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://y8vmcsdwjrm6" path="res://assets jogo/Audio/Operation2.wav" id="19_c3prn"]
 [ext_resource type="Texture2D" uid="uid://c1w21fsxf0s3v" path="res://assets jogo/Sprites Itens/Operation/vinheta.png" id="20_c3prn"]
 [ext_resource type="Script" uid="uid://cpqjtbkbkjbe5" path="res://fade.gd" id="21_fc3uq"]
+[ext_resource type="Texture2D" uid="uid://cjp84gn54kgx7" path="res://assets jogo/UI/botão dica.png" id="23_vkngh"]
+[ext_resource type="PackedScene" uid="uid://c541pshcbhl57" path="res://HintPopup.tscn" id="25_0aks0"]
 
 [sub_resource type="Animation" id="Animation_xkndl"]
 resource_name = "Direita"
@@ -152,6 +154,8 @@ script = ExtResource("5_gaeko")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/ReisManager/Cama" unique_id=1007779376]
 position = Vector2(-258.94202, 107.15219)
 shape = SubResource("RectangleShape2D_7emwj")
+
+[node name="Hint" parent="." unique_id=1158226841 instance=ExtResource("25_0aks0")]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1134822759]
 script = ExtResource("5_hkwey")
@@ -350,6 +354,12 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("21_fc3uq")
 
+[node name="TextureButton" type="TextureButton" parent="UI" unique_id=1888241188]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.24077724, 0.24077724)
+texture_normal = ExtResource("23_vkngh")
+
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=323153004]
 stream = ExtResource("1_ftwci")
 autoplay = true
@@ -369,4 +379,5 @@ autoplay = true
 [connection signal="mouse_entered" from="UI/OperationGame/Objeto4" to="UI/OperationGame/Objeto4" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/OperationGame/Objeto4" to="UI/OperationGame/Objeto4" method="_on_mouse_exited"]
 [connection signal="area_entered" from="UI/OperationGame/Metal" to="UI/OperationGame/Metal" method="_on_area_entered"]
+[connection signal="pressed" from="UI/TextureButton" to="World/ReisManager" method="_on_texture_button_pressed"]
 [connection signal="finished" from="MusicPlayer" to="World/ReisManager" method="_on_music_player_finished"]
