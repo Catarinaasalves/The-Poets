@@ -43,7 +43,7 @@ func apanhar_pa():
 
 	pa_apanhada = true
 
-	background.texture = preload("res://assets jogo/Quartos/CaeiroQuartoSemPa.png")
+	background.texture = preload("res://Assets/Quartos/CaeiroQuartoSemPa.png")
 
 	pa_hotbar.visible = true
 	pa_inventario.visible = true
@@ -82,7 +82,7 @@ func animar_pa():
 	pa_animada.rotation_degrees = 0
 	pa_animada.visible = false
 
-	background.texture = preload("res://assets jogo/Quartos/CaeiroQuartoBuraco.png")
+	background.texture = preload("res://Assets/Quartos/CaeiroQuartoBuraco.png")
 
 	buraco_colisao.process_mode = Node.PROCESS_MODE_INHERIT
 
